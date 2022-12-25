@@ -13,10 +13,12 @@ My goal is to create a common IDE like text-editor for work env (*Windows*) and 
 - [node](https://nodejs.org/), [npm](https://npmjs.com/)
 - [cargo](https://www.rust-lang.org/tools/install)
 - [ripgrep](https://github.com/BurntSushi/ripgrep), [fd](https://github.com/sharkdp/fd)
+- [Nerd Fonts](https://www.nerdfonts.com/)
 
 ### On Windows recomended
 - [PowerShell 7+](https://learn.microsoft.com/en-us/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7)
 - [Windows Terminal](https://github.com/microsoft/terminal)
 
 ### On Linux recomended
+- [Zsh](https://www.zsh.org/)
 - [Alacritty](https://alacritty.org/)
