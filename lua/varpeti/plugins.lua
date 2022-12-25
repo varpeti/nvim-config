@@ -64,4 +64,8 @@ return require('packer').startup(function(use)
   use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
   use { "lukas-reineke/indent-blankline.nvim" }
   use { 'brenoprata10/nvim-highlight-colors' }
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
 end)
