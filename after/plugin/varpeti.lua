@@ -9,10 +9,26 @@ require('telescope').setup {
         ["p"] = action_layout.toggle_preview
       },
     },
+    file_ignore_patterns = { "_build", ".git" },
     layout_config = {
       width = 0.99,
       preview_width = 0.5
+    },
+    vimgrep_arguments = {
+      "rg",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
+      "--trim" -- add this value
     }
+  },
+  pickers = {
+    find_files = {
+      hidden = true,
+    },
   },
 }
 
@@ -46,7 +62,23 @@ require 'nvim-treesitter.configs'.setup {
 --
 -- Nvim-tree
 --
-require("nvim-tree").setup()
+require("nvim-tree").setup({
+  sort_by = "case_sensitive",
+  view = {
+    adaptive_size = true,
+    mappings = {
+      list = {
+        {},
+      },
+    },
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = false,
+  },
+})
 
 --
 -- Lsp-zero
