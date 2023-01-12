@@ -9,7 +9,7 @@ require('telescope').setup {
         ["p"] = action_layout.toggle_preview
       },
     },
-    file_ignore_patterns = { "_build", ".git" },
+    file_ignore_patterns = { "_build", "build", ".cache", ".git" },
     layout_config = {
       width = 0.99,
       preview_width = 0.5
