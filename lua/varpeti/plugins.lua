@@ -43,29 +43,32 @@ return require('packer').startup(function(use)
     'nvim-tree/nvim-tree.lua',
     requires = {
       'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    },
-    use {
-      'numToStr/Comment.nvim',
-      config = function()
-        require('Comment').setup()
-      end
     }
+  }
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
   }
   use {
     "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
   }
-  use {
-    "ahmedkhalf/project.nvim",
-    config = function()
-      require("project_nvim").setup {}
-    end
-  }
   use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
   use { "lukas-reineke/indent-blankline.nvim" }
   use { 'brenoprata10/nvim-highlight-colors' }
-  use({
+  use {
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
-  })
+  }
+  use { 'lewis6991/gitsigns.nvim' }
+  use { 'RRethy/vim-illuminate' }
+  use { 'rhysd/clever-f.vim' }
+  use { 'mhinz/vim-startify' }
+  use { 'ntpeters/vim-better-whitespace' }
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
 end)

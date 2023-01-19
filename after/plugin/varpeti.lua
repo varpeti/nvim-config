@@ -50,6 +50,9 @@ require 'nvim-treesitter.configs'.setup {
   highlight = {
     -- `false` will disable the whole extension
     enable = true,
+    disable = function(lang, bufnr)
+      return vim.api.nvim_buf_line_count(bufnr) > 50000 -- Disable for large files
+    end,
 
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
@@ -143,13 +146,13 @@ require("tokyonight").setup({
 
   --- You can override specific color groups to use other groups or a hex color
   --- function will be called with a ColorScheme table
-  ---@param colors ColorScheme
+  --- param colors ColorScheme
   -- on_colors = function(colors) end,
 
   --- You can override specific highlights to use other groups or a hex color
   --- function will be called with a Highlights and ColorScheme table
-  ---@param highlights Highlights
-  ---@param colors ColorScheme
+  --- param highlights Highlights
+  --- param colors ColorScheme
   -- on_highlights = function(highlights, colors) end,
 })
 vim.cmd.colorscheme('tokyonight')
@@ -158,3 +161,14 @@ vim.cmd.colorscheme('tokyonight')
 -- Nvim-highlight-colors
 --
 require('nvim-highlight-colors').setup {}
+
+--
+-- Gitsigns
+--
+require('gitsigns').setup()
+
+
+--
+-- Starify
+--
+vim.cmd "let g:startify_session_persistence = 1"
